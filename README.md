@@ -18,7 +18,7 @@ $ chmod +x ./empty_versioned_bucket.sh
 # Usage
 
 ````bash
-$./empty_versioned_bucket.sh -b bucket [-p profile | -h help]  
+$ ./empty_versioned_bucket.sh -b bucket [-p profile | -h help]  
 ````
 
   -p | --profile              : The local aws config profile name  
