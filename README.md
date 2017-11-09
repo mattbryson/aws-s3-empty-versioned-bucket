@@ -1,13 +1,7 @@
 # AWS S3 empty versioned bucket
 A command to completely empty an AWS S3 Version enabled bucket, including objects, versions and delete markers
 
-# Intallation
-
-You will need the AWS CLI installed to run the script.
-
-````bash
-pip install awscli --upgrade --user
-````
+# Installation
 
 Once you have checked out the git repo, you need to ensure the script is executable.
 
@@ -18,14 +12,20 @@ $ chmod +x ./empty_versioned_bucket.sh
 # Usage
 
 ````bash
-$ ./empty_versioned_bucket.sh -b bucket [-p profile | -h help]  
+$ python ./emptyVersionedBucket.sh -b bucket-to-empty -p my-creds
 ````
 
-  -p | --profile              : The local aws config profile name  
-  -b | --bucket               : The bucket name to empty  
-  -h | --help                 : Print this message  
+usage: emptyVersionedBucket.py [-h] -b BUCKET [-p PROFILE] [-d]
+
+Delete all objects and versions from Version Enabled S3 Bucket
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -b BUCKET, --bucket BUCKET
+                        A valid s3 bucket name
+  -p PROFILE, --profile PROFILE
+                        A AWS profile name located in ~/.aws/config
+  -d, --delete_bucket   Remove the bucket after emptying
 
 
 You can pass a `profile` to authenticate with, or export your `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` to the env before running the command.
-
-If you have a very large bucket, you can run this on an EC2 box within AWS network to reduce the latency.
