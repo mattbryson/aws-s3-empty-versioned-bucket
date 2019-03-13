@@ -41,7 +41,7 @@ code = 0
 try:
     run()
 except (BotoCoreError, ClientError) as e:
-    print e.message
+    print(e.message)
     code = 1
 except Exception as e:
     raise
